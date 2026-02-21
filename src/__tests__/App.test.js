@@ -4,13 +4,12 @@
 
 import '@testing-library/jest-dom';
 import '@testing-library/react';
-import React from 'react';
+import React, { act } from 'react';
 import ReactDOM from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
 import App from '../App';
 
 describe('renders the app', () => {
-  // mocks the fetch API used on the stats page and the about page.
+  // mocks the fetch API used on the about page.
   const jsonMock = jest.fn(() => Promise.resolve({}));
   const textMock = jest.fn(() => Promise.resolve(''));
   global.fetch = jest.fn(() => Promise.resolve({
@@ -23,6 +22,7 @@ describe('renders the app', () => {
   let container;
 
   beforeEach(async () => {
+    window.history.pushState({}, '', '/');
     container = document.createElement('div');
     document.body.appendChild(container);
     await act(async () => {
@@ -41,72 +41,48 @@ describe('renders the app', () => {
   });
 
   it('should render the title', async () => {
-    expect(document.title).toBe("Michael D'Angelo");
+    expect(document.title).toContain('Donate |');
   });
 
   it('can navigate to /about', async () => {
-    expect.assertions(7);
-    const aboutLink = document.querySelector(
-      '#header > nav > ul > li:nth-child(1) > a',
-    );
+    expect.assertions(6);
+    const aboutLink = document.querySelector('a[href="/about"]');
     expect(aboutLink).toBeInTheDocument();
     await act(async () => {
       await aboutLink.click();
     });
-    expect(document.title).toContain('About |');
+    expect(document.title).toContain('About SeriousFun |');
     expect(window.location.pathname).toBe('/about');
     expect(window.scrollTo).toHaveBeenNthCalledWith(1, 0, 0);
     expect(global.fetch).toHaveBeenCalledTimes(1);
-    expect(jsonMock).toHaveBeenCalledTimes(0);
     expect(textMock).toHaveBeenCalledTimes(1);
   });
 
-  it('can navigate to /resume', async () => {
+  it('can navigate to /semesters', async () => {
     expect.assertions(3);
-    const contactLink = document.querySelector(
-      '#header > nav > ul > li:nth-child(2) > a',
-    );
-    expect(contactLink).toBeInTheDocument();
+    const semestersLink = document.querySelector('a[href="/semesters"]');
+    expect(semestersLink).toBeInTheDocument();
     await act(async () => {
-      await contactLink.click();
+      await semestersLink.click();
     });
-    expect(document.title).toContain('Resume |');
-    expect(window.location.pathname).toBe('/resume');
+    expect(document.title).toContain('Semesters |');
+    expect(window.location.pathname).toBe('/semesters');
   });
 
-  it('can navigate to /projects', async () => {
+  it('can navigate to /faq', async () => {
     expect.assertions(3);
-    const contactLink = document.querySelector(
-      '#header > nav > ul > li:nth-child(3) > a',
-    );
-    expect(contactLink).toBeInTheDocument();
+    const faqLink = document.querySelector('a[href="/faq"]');
+    expect(faqLink).toBeInTheDocument();
     await act(async () => {
-      await contactLink.click();
+      await faqLink.click();
     });
-    expect(document.title).toContain('Projects |');
-    expect(window.location.pathname).toBe('/projects');
-  });
-
-  it('can navigate to /stats', async () => {
-    expect.assertions(5);
-    const contactLink = document.querySelector(
-      '#header > nav > ul > li:nth-child(4) > a',
-    );
-    expect(contactLink).toBeInTheDocument();
-    await act(async () => {
-      await contactLink.click();
-    });
-    expect(document.title).toContain('Stats |');
-    expect(window.location.pathname).toBe('/stats');
-    expect(global.fetch).toHaveBeenCalledTimes(1);
-    expect(jsonMock).toHaveBeenCalledTimes(1);
+    expect(document.title).toContain('FAQ |');
+    expect(window.location.pathname).toBe('/faq');
   });
 
   it('can navigate to /contact', async () => {
     expect.assertions(3);
-    const contactLink = document.querySelector(
-      '#header > nav > ul > li:nth-child(5) > a',
-    );
+    const contactLink = document.querySelector('a[href="/contact"]');
     expect(contactLink).toBeInTheDocument();
     await act(async () => {
       await contactLink.click();
