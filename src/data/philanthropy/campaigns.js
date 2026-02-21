@@ -15,7 +15,7 @@ const campaigns = [
       directToSeriousFun: 'https://seriousfun.org/',
 
       // Optional: a Stripe Payment Link / hosted checkout owned by your chapter.
-      // If you use this, donations typically go to your chapter first.
+      // If you use tsdsdshis, donations typically go to your chapter first.
       viaChapterStripe: '',
     },
   },
