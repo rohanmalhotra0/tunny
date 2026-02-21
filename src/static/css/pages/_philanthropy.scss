@@ -1,0 +1,321 @@
+// Philanthropy / fundraising pages
+
+#index {
+  .phHero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    margin: 1rem 0 1.75rem 0;
+    padding: 1.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 163, 255, 0.18);
+    background: linear-gradient(135deg, rgba(0, 87, 183, 0.06), rgba(0, 163, 255, 0.06));
+  }
+
+  .phHero__headline {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .phHero__subhead {
+    margin: 0 0 1rem 0;
+    color: _palette(fg);
+  }
+
+  .phHero__stats {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    li {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0.75rem 0.9rem;
+      min-width: 140px;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.1;
+      color: _palette(fg-bold);
+    }
+  }
+}
+
+.donationCard {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.donationCard__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.donationCard__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: _palette(fg-light);
+}
+
+.donationCard__title {
+  font-weight: 800;
+  font-family: _font(family-heading);
+  color: _palette(fg-bold);
+  margin-top: 0.1rem;
+}
+
+.donationCard__dates,
+.donationCard__updated {
+  font-size: 0.85rem;
+  color: _palette(fg-light);
+}
+
+.donationCard__amountRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0 0.6rem 0;
+}
+
+.donationCard__amount {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: _palette(fg-bold);
+}
+
+.donationCard__muted {
+  font-size: 0.8rem;
+  color: _palette(fg-light);
+  margin-top: 0.15rem;
+}
+
+.donationCard__right {
+  text-align: right;
+}
+
+.donationCard__fineprint {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: _palette(fg-light);
+}
+
+.campaignPicker__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: _palette(fg-light);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.campaignPicker__select {
+  height: 2.6rem;
+  padding: 0 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.18);
+  color: _palette(fg-bold);
+  min-width: 160px;
+}
+
+.donateButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.progress {
+  margin-top: 0.35rem;
+}
+
+.progress__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: _palette(fg-light);
+  margin-bottom: 0.35rem;
+}
+
+.progress__track {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  background-image: linear-gradient(135deg, #0057b7 0%, #00a3ff 100%);
+  border-radius: 999px;
+}
+
+.phSection {
+  margin-top: 2rem;
+}
+
+.phMuted {
+  color: _palette(fg-light);
+}
+
+.totalsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.totalsCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.totalsCard__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: _palette(fg-light);
+}
+
+.totalsCard__value {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: _palette(fg-bold);
+  margin-top: 0.2rem;
+}
+
+.totalsCard__muted {
+  color: _palette(fg-light);
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+}
+
+// Semesters page
+
+.semGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.semCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.semCard--active {
+  border-color: rgba(0, 163, 255, 0.35);
+  box-shadow: 0 10px 22px rgba(0, 163, 255, 0.12);
+}
+
+.semCard__badge {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(0, 163, 255, 0.1);
+  border: 1px solid rgba(0, 163, 255, 0.25);
+  color: _palette(fg-bold);
+  vertical-align: middle;
+}
+
+.semCard__dates,
+.semCard__updated {
+  color: _palette(fg-light);
+  font-size: 0.85rem;
+}
+
+.semCard__amounts {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-top: 0.75rem;
+}
+
+.semCard__amount {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: _palette(fg-bold);
+}
+
+.semCard__muted {
+  color: _palette(fg-light);
+  font-size: 0.8rem;
+}
+
+.semCard__right {
+  text-align: right;
+}
+
+.semCard__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+// FAQ
+
+.faqItem {
+  margin-top: 1.5rem;
+}
+
+.faqItem__question {
+  margin-bottom: 0.5rem;
+}
+
+// Sidebar extras
+
+.sidebarProgress__amounts {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: _palette(fg-light);
+}
+
+.sidebarProgress__updated {
+  margin: 0.6rem 0 0 0;
+  font-size: 0.8rem;
+  color: _palette(fg-light);
+}
+
+@include breakpoint(small) {
+  #index {
+    .phHero {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+  }
+  .totalsGrid {
+    grid-template-columns: 1fr;
+  }
+  .semGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

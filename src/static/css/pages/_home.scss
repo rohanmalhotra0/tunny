@@ -1,0 +1,31 @@
+// Home / Hero styles
+
+#index {
+  .hero {
+    background: linear-gradient(135deg, rgba(0, 87, 183, 0.08), rgba(0, 163, 255, 0.08));
+    border: 1px solid rgba(0, 163, 255, 0.2);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-logo {
+    display: block;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+
